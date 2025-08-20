@@ -1,0 +1,544 @@
+{
+  "classes": [
+    {
+      "name": "10 AĐ VẬT LÝ TC 1",
+      "schedule": [
+        {
+          "room": "A703",
+          "day": 2,
+          "period": 0
+        },
+        {
+          "room": "A703",
+          "day": 2,
+          "period": 1
+        },
+        {
+          "room": "A703",
+          "day": 4,
+          "period": 2
+        },
+        {
+          "room": "A703",
+          "day": 4,
+          "period": 3
+        }
+      ]
+    },
+    {
+      "name": "10 AĐ VẬT LÝ TC 2",
+      "schedule": [
+        {
+          "room": "A601",
+          "day": 1,
+          "period": 2
+        },
+        {
+          "room": "A601",
+          "day": 1,
+          "period": 3
+        },
+        {
+          "room": "A601",
+          "day": 2,
+          "period": 2
+        },
+        {
+          "room": "A601",
+          "day": 2,
+          "period": 3
+        }
+      ]
+    },
+    {
+      "name": "10 AĐ VẬT LÝ TC 3",
+      "schedule": [
+        {
+          "room": "B505",
+          "day": 2,
+          "period": 5
+        },
+        {
+          "room": "B505",
+          "day": 2,
+          "period": 6
+        },
+        {
+          "room": "B505",
+          "day": 3,
+          "period": 2
+        },
+        {
+          "room": "B505",
+          "day": 3,
+          "period": 3
+        }
+      ]
+    },
+    {
+      "name": "10 AĐ VẬT LÝ TC 4",
+      "schedule": [
+        {
+          "room": "B504",
+          "day": 1,
+          "period": 0
+        },
+        {
+          "room": "B504",
+          "day": 1,
+          "period": 1
+        },
+        {
+          "room": "B504",
+          "day": 3,
+          "period": 2
+        },
+        {
+          "room": "B504",
+          "day": 3,
+          "period": 3
+        }
+      ]
+    },
+    {
+      "name": "10 AĐ VẬT LÝ TC 5",
+      "schedule": [
+        {
+          "room": "A602",
+          "day": 2,
+          "period": 2
+        },
+        {
+          "room": "A602",
+          "day": 2,
+          "period": 3
+        },
+        {
+          "room": "A602",
+          "day": 4,
+          "period": 0
+        },
+        {
+          "room": "A602",
+          "day": 4,
+          "period": 1
+        }
+      ]
+    },
+    {
+      "name": "10 LÝ CHUYÊN",
+      "schedule": [
+        {
+          "room": "A702",
+          "day": 0,
+          "period": 2
+        },
+        {
+          "room": "A702",
+          "day": 0,
+          "period": 3
+        },
+        {
+          "room": "A702",
+          "day": 0,
+          "period": 4
+        }
+      ]
+    },
+    {
+      "name": "10 LÝ CĐ",
+      "schedule": [
+        {
+          "room": "A702",
+          "day": 1,
+          "period": 5
+        },
+        {
+          "room": "A702",
+          "day": 1,
+          "period": 6
+        },
+        {
+          "room": "A702",
+          "day": 1,
+          "period": 7
+        },
+        {
+          "room": "A702",
+          "day": 1,
+          "period": 8
+        },
+        {
+          "room": "A702",
+          "day": 3,
+          "period": 5
+        },
+        {
+          "room": "A702",
+          "day": 3,
+          "period": 6
+        },
+        {
+          "room": "A702",
+          "day": 3,
+          "period": 7
+        },
+        {
+          "room": "A702",
+          "day": 3,
+          "period": 8
+        }
+      ]
+    },
+    {
+      "name": "10 ĐH Vật lý TC 1",
+      "schedule": [
+        {
+          "room": "A210",
+          "day": 1,
+          "period": 5
+        },
+        {
+          "room": "A210",
+          "day": 1,
+          "period": 6
+        },
+        {
+          "room": "A210",
+          "day": 1,
+          "period": 7
+        },
+        {
+          "room": "A210",
+          "day": 2,
+          "period": 2
+        }
+      ]
+    },
+    {
+      "name": "10 ĐH Vật lý TC 2",
+      "schedule": [
+        {
+          "room": "A204",
+          "day": 0,
+          "period": 5
+        },
+        {
+          "room": "A204",
+          "day": 0,
+          "period": 6
+        },
+        {
+          "room": "A204",
+          "day": 2,
+          "period": 3
+        },
+        {
+          "room": "A204",
+          "day": 2,
+          "period": 4
+        }
+      ]
+    },
+    {
+      "name": "10 ĐH Vật lý TC 3",
+      "schedule": [
+        {
+          "room": "B111",
+          "day": 0,
+          "period": 0
+        },
+        {
+          "room": "B111",
+          "day": 0,
+          "period": 1
+        },
+        {
+          "room": "B111",
+          "day": 1,
+          "period": 5
+        },
+        {
+          "room": "B111",
+          "day": 1,
+          "period": 6
+        }
+      ]
+    },
+    {
+      "name": "10 ĐH Vật lý TC 4",
+      "schedule": [
+        {
+          "room": "B201",
+          "day": 0,
+          "period": 3
+        },
+        {
+          "room": "B201",
+          "day": 0,
+          "period": 4
+        },
+        {
+          "room": "B201",
+          "day": 2,
+          "period": 0
+        },
+        {
+          "room": "B201",
+          "day": 2,
+          "period": 1
+        }
+      ]
+    },
+    {
+      "name": "10 ĐH Vật lý TC 5",
+      "schedule": [
+        {
+          "room": "A105",
+          "day": 1,
+          "period": 4
+        },
+        {
+          "room": "A105",
+          "day": 2,
+          "period": 2
+        },
+        {
+          "room": "A105",
+          "day": 2,
+          "period": 3
+        },
+        {
+          "room": "A105",
+          "day": 2,
+          "period": 4
+        }
+      ]
+    },
+    {
+      "name": "10 ĐH Vật lý TC 6",
+      "schedule": [
+        {
+          "room": "A308",
+          "day": 0,
+          "period": 0
+        },
+        {
+          "room": "A308",
+          "day": 0,
+          "period": 1
+        },
+        {
+          "room": "A308",
+          "day": 2,
+          "period": 0
+        },
+        {
+          "room": "A308",
+          "day": 2,
+          "period": 1
+        }
+      ]
+    },
+    {
+      "name": "12 AĐ Vật lý TC 1",
+      "schedule": [
+        {
+          "room": "A603",
+          "day": 3,
+          "period": 2
+        },
+        {
+          "room": "A603",
+          "day": 3,
+          "period": 3
+        },
+        {
+          "room": "A603",
+          "day": 3,
+          "period": 4
+        }
+      ]
+    },
+    {
+      "name": "12 AĐ Vật lý TC 2",
+      "schedule": [
+        {
+          "room": "A604",
+          "day": 1,
+          "period": 0
+        },
+        {
+          "room": "A604",
+          "day": 1,
+          "period": 1
+        },
+        {
+          "room": "A604",
+          "day": 1,
+          "period": 2
+        }
+      ]
+    },
+    {
+      "name": "12 AĐ Vật lý TC 3",
+      "schedule": [
+        {
+          "room": "A503",
+          "day": 1,
+          "period": 5
+        },
+        {
+          "room": "A503",
+          "day": 1,
+          "period": 6
+        },
+        {
+          "room": "A503",
+          "day": 1,
+          "period": 7
+        }
+      ]
+    },
+    {
+      "name": "12 AĐ Vật lý TC 4",
+      "schedule": [
+        {
+          "room": "A501",
+          "day": 1,
+          "period": 2
+        },
+        {
+          "room": "A501",
+          "day": 1,
+          "period": 3
+        },
+        {
+          "room": "A501",
+          "day": 1,
+          "period": 4
+        }
+      ]
+    },
+    {
+      "name": "12 AĐ Vật lý TC 5",
+      "schedule": [
+        {
+          "room": "B401",
+          "day": 2,
+          "period": 5
+        },
+        {
+          "room": "B401",
+          "day": 2,
+          "period": 6
+        },
+        {
+          "room": "B401",
+          "day": 2,
+          "period": 7
+        }
+      ]
+    },
+    {
+      "name": "12 AĐ Vật lý TC 6",
+      "schedule": [
+        {
+          "room": "B201",
+          "day": 2,
+          "period": 8
+        },
+        {
+          "room": "B201",
+          "day": 3,
+          "period": 0
+        },
+        {
+          "room": "B201",
+          "day": 3,
+          "period": 1
+        }
+      ]
+    },
+    {
+      "name": "12 LÝ CHUYÊN",
+      "schedule": [
+        {
+          "room": "A302",
+          "day": 0,
+          "period": 2
+        },
+        {
+          "room": "A302",
+          "day": 0,
+          "period": 3
+        },
+        {
+          "room": "A302",
+          "day": 0,
+          "period": 4
+        }
+      ]
+    },
+    {
+      "name": "12 ĐH Vật lý TC 1",
+      "schedule": [
+        {
+          "room": "B213",
+          "day": 3,
+          "period": 2
+        },
+        {
+          "room": "B213",
+          "day": 3,
+          "period": 3
+        },
+        {
+          "room": "B213",
+          "day": 3,
+          "period": 4
+        }
+      ]
+    },
+    {
+      "name": "12 ĐH Vật lý TC 2",
+      "schedule": [
+        {
+          "room": "A301",
+          "day": 0,
+          "period": 5
+        },
+        {
+          "room": "A301",
+          "day": 0,
+          "period": 6
+        },
+        {
+          "room": "A301",
+          "day": 0,
+          "period": 7
+        }
+      ]
+    },
+    {
+      "name": "12 ĐH Vật lý TC 3",
+      "schedule": [
+        {
+          "room": "B203",
+          "day": 0,
+          "period": 2
+        },
+        {
+          "room": "B203",
+          "day": 0,
+          "period": 3
+        },
+        {
+          "room": "B203",
+          "day": 0,
+          "period": 4
+        }
+      ]
+    }
+  ]
+}
