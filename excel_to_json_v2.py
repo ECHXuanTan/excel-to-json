@@ -6,7 +6,11 @@ import os
 
 def parse_day_text(day_text):
     """Chuyển đổi text thứ thành số (Thứ 2=0, Thứ 3=1, ...)"""
-    if not day_text or pd.isna(day_text) or day_text.strip() == "":
+    if pd.isna(day_text) or not day_text:
+        return None
+    
+    day_text = str(day_text).strip()
+    if day_text == "" or day_text == "nan":
         return None
     
     day_map = {
@@ -17,16 +21,17 @@ def parse_day_text(day_text):
         "Thứ 6": 4
     }
     
-    day_text = str(day_text).strip()
     return day_map.get(day_text, None)
 
 
 def parse_period_text(period_text):
     """Chuyển đổi text tiết thành danh sách số (1-2 -> [0,1], 3-5 -> [2,3,4])"""
-    if not period_text or pd.isna(period_text) or period_text.strip() == "":
+    if pd.isna(period_text) or not period_text:
         return []
     
     period_text = str(period_text).strip()
+    if period_text == "" or period_text == "nan":
+        return []
     
     # Xử lý khoảng tiết (ví dụ: 1-2, 3-5, 6-9)
     if '-' in period_text:
@@ -41,39 +46,82 @@ def parse_period_text(period_text):
     else:
         # Xử lý tiết đơn lẻ
         try:
-            return [int(period_text) - 1]  # Chuyển từ 1-based sang 0-based
+            return [int(float(period_text)) - 1]  # Chuyển từ 1-based sang 0-based, xử lý cả float
         except ValueError:
             return []
     
     return []
 
 
-def parse_class_name_and_room(class_text):
-    """Tách tên lớp và tên phòng từ text"""
-    if not class_text or pd.isna(class_text):
-        return None, None
+def parse_class_name(class_text):
+    """Tách tên lớp từ text và format theo yêu cầu (thêm GDTC, viết thường)"""
+    if pd.isna(class_text) or not class_text:
+        return None
     
     class_text = str(class_text).strip()
+    if class_text == "" or class_text == "nan":
+        return None
     
-    # Tách theo xuống dòng
+    # Tách theo xuống dòng - chỉ lấy dòng đầu tiên làm tên lớp
     lines = class_text.split('\n')
     
-    if len(lines) >= 2:
+    if len(lines) >= 1:
         class_name = lines[0].strip()
-        room_name = lines[1].strip()
-        return class_name, room_name
     elif len(lines) == 1:
-        # Nếu chỉ có 1 dòng, thử tách bằng regex
+        # Nếu chỉ có 1 dòng, thử tách bằng regex để lấy phần tên lớp
         # Tìm pattern: tên lớp + mã phòng (A703, B505, etc.)
         match = re.match(r'^(.+?)\s*([A-Z]\d+)$', class_text)
         if match:
             class_name = match.group(1).strip()
-            room_name = match.group(2).strip()
-            return class_name, room_name
         else:
-            return class_text, None
+            class_name = class_text
+    else:
+        return None
     
-    return None, None
+    if not class_name:
+        return None
+    
+    # Xử lý format tên lớp
+    # Nếu đã có "GDTC" ở đầu thì bỏ đi để tránh trùng lặp
+    if class_name.startswith("GDTC "):
+        class_name = class_name[5:]  # Bỏ "GDTC " ở đầu
+    
+    # Tách thành các phần để xử lý
+    parts = class_name.split()
+    if len(parts) >= 2:
+        # Xử lý từng phần
+        formatted_parts = []
+        for i, part in enumerate(parts):
+            if i == 0:  # Phần đầu tiên (số lớp)
+                formatted_parts.append(part)
+            else:
+                # Kiểm tra nếu có cụm -LN (giữ nguyên viết hoa)
+                if '-LN' in part:
+                    # Tách phần trước và sau -LN
+                    ln_parts = part.split('-LN')
+                    if len(ln_parts) == 2:
+                        # Phần trước -LN viết thường, phần -LN giữ nguyên
+                        before_ln = ln_parts[0]
+                        after_ln = ln_parts[1]
+                        if before_ln.upper() == before_ln and len(before_ln) > 1:
+                            before_ln = before_ln.capitalize()
+                        formatted_part = f"{before_ln}-LN{after_ln}"
+                        formatted_parts.append(formatted_part)
+                    else:
+                        formatted_parts.append(part)
+                else:
+                    # Các phần khác: viết thường chữ cái đầu, giữ nguyên phần còn lại
+                    if part.upper() == part and len(part) > 1:  # Nếu toàn bộ là chữ hoa
+                        formatted_parts.append(part.capitalize())
+                    else:
+                        formatted_parts.append(part)
+        
+        formatted_name = " ".join(formatted_parts)
+    else:
+        formatted_name = class_name
+    
+    # Thêm "GDTC" vào đầu
+    return f"GDTC {formatted_name}"
 
 
 def excel_to_json(excel_file, output_file=None):
@@ -90,9 +138,9 @@ def excel_to_json(excel_file, output_file=None):
     
     # Duyệt qua từng dòng
     for index, row in df.iterrows():
-        # Lấy tên lớp và phòng từ cột đầu tiên
+        # Lấy tên lớp từ cột đầu tiên
         first_col = row.iloc[0]  # Cột đầu tiên
-        class_name, room_name = parse_class_name_and_room(first_col)
+        class_name = parse_class_name(first_col)
         
         if not class_name:
             continue
@@ -110,10 +158,10 @@ def excel_to_json(excel_file, output_file=None):
             periods = parse_period_text(period_text)
             
             # Tạo schedule entries cho từng tiết
-            if day_num is not None and periods and room_name:
+            if day_num is not None and periods:
                 for period in periods:
                     schedule.append({
-                        "room": room_name,
+                        "room": "Sân trường",
                         "day": day_num,
                         "period": period
                     })

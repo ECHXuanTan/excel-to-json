@@ -75,5 +75,5 @@ python excel_to_json.py
 
 ## Yêu cầu hệ thống
 ```bash
-pip install pandas openpyxl
+python3 -m pip install -r requirements.txt
 ```
